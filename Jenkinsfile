@@ -28,7 +28,7 @@ pipeline {
         }
          stage('Sonar-Report') {
             steps {
-                sh 'mvn clean install sonar:sonar -Dsonar.host.url=http://169.254.36.199:9000 -Dsonar.analysis.mode=publish'
+                bat 'mvn clean install sonar:sonar -Dsonar.host.url=http://169.254.36.199:9000 -Dsonar.analysis.mode=publish'
             }
          }
     }
