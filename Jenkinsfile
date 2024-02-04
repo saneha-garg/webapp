@@ -26,13 +26,6 @@ pipeline {
                 }
             }
         }
-        stage('Scan'){
-            steps{
-                withSonarQubeEnv(installationName: 'sonarqube'){
-                    bat './mvnw clean org.sonarsource.scanner.maven;sonar-maven-plugin:3.9.0.2155:sonar'
-                }
-            }
-        }
         stage('Sonar-Report') {  
            steps { 
                 bat 'mvn clean install sonar:sonar -Dsonar.host.url=http://169.254.36.199:9000 -Dsonar.analysis.mode=publish'  
