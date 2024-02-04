@@ -10,7 +10,7 @@ pipeline {
         }
           stage('Sonar-Report') {
             steps {
-            sh 'mvn sonar:sonar \
+            bat 'mvn sonar:sonar \
   -Dsonar.projectKey=jenkins_project \
   -Dsonar.host.url=http://169.254.36.199:9000 \
   -Dsonar.login=5f09ded7e5db4d0ea0dcfd937c181af706e60475'
