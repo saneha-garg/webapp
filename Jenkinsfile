@@ -1,21 +1,21 @@
 pipeline {
     agent {
         label 'master'
-    }
+    }https://classroom.google.com/u/0/h
     stages {
         stage('Build') {
             steps {
                 bat 'mvn -B -DskipTests clean package'
             }
         }
-          stage('Sonar-Report') {
-            steps {
-            bat 'mvn sonar:sonar \
-  -Dsonar.projectKey=jenkins_project \
-  -Dsonar.host.url=http://169.254.36.199:9000 \
-  -Dsonar.login=5f09ded7e5db4d0ea0dcfd937c181af706e60475'
-            }
-        }
+  //         stage('Sonar-Report') {
+  //           steps {
+  //           bat 'mvn sonar:sonar \
+  // -Dsonar.projectKey=jenkins_project \
+  // -Dsonar.host.url=http://169.254.36.199:9000 \
+  // -Dsonar.login=5f09ded7e5db4d0ea0dcfd937c181af706e60475'
+  //           }
+  //       }
         stage('Test') { 
             steps {
                 bat 'mvn test' 
@@ -26,11 +26,11 @@ pipeline {
                 }
             }
         }
-     //    stage('Sonar-Report') {  
-     //       steps { 
-     //            bat 'mvn clean install sonar:sonar -Dsonar.host.url=http://169.254.36.199:9000 -Dsonar.analysis.mode=publish'  
-     //        }
-     // }
+         stage('Sonar-Report') {  
+            steps { 
+                 bat 'mvn clean install sonar:sonar -Dsonar.host.url=http://169.254.36.199:9000 -Dsonar.analysis.mode=publish'  
+             }
+      }
         // stage('Deploy'){
         //     steps{
         //         bat '/var/deployment/./deployment.sh'
