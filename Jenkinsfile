@@ -1,7 +1,7 @@
 pipeline {
     agent {
         label 'master'
-    }https://classroom.google.com/u/0/h
+    }
     stages {
         stage('Build') {
             steps {
