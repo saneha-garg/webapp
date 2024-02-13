@@ -13,7 +13,7 @@ pipeline {
             bat 'mvn sonar:sonar \
   -Dsonar.projectKey=jenkins_project \
   -Dsonar.host.url=http://localhost:9009 \
-  -Dsonar.login=squ_e16631c55d56e72378e1841bf14f3676e5b226dc
+  -Dsonar.login=squ_e16631c55d56e72378e1841bf14f3676e5b226dc'
             }
         }
         stage('Test') { 
