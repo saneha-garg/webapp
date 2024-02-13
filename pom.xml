@@ -12,8 +12,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.analysis.mode>preview</sonar.analysis.mode>       <sonar.issuesReport.html.enable>true</sonar.issuesReport.html.enable>
-  </properties>
+    </properties>
 
   <dependencies>
     <dependency>
