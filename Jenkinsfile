@@ -8,15 +8,10 @@ pipeline {
                 bat 'mvn -B -DskipTests clean package'
             }
         }
-        node {
-  stage('SCM') {
-    checkout scm
-  }
+        
   stage('SonarQube Analysis') {
-    def mvn = tool 'Default Maven';
-
-      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=applicationweb -Dsonar.projectName='applicationweb' -Dsonar.token=squ_211d2961113097411c91a0799ebdbd45dd2e462d"
+    
+      sh "mvn clean verify sonar:sonar -Dsonar.projectKey=applicationweb -Dsonar.projectName='applicationweb' -Dsonar.host.url=http://localhost:9009 -Dsonar.token=squ_211d2961113097411c91a0799ebdbd45dd2e462d"
   }
 }
-    }
 }
