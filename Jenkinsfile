@@ -10,7 +10,7 @@ pipeline {
         }
           stage('Sonar-Report') {
             steps {
-            bat 'mvn sonar:sonar \
+            bat 'mvn clean verify sonar:sonar \
   -Dsonar.projectKey=jenkins_project \
   -Dsonar.host.url=http://localhost:9009 \
   -Dsonar.login=squ_211d2961113097411c91a0799ebdbd45dd2e462d'
@@ -28,7 +28,7 @@ pipeline {
         }
          stage('Sonar-publish') {  
             steps { 
-                 bat 'mvn clean install sonar:sonar -Dsonar.host.url=http://localhost:9009 -Dsonar.analysis.mode=publish'  
+                 bat 'mvn clean install sonar:sonar -Dsonar.host.url=http://localhost:9009'  
              }
       }
         // stage('Deploy'){
