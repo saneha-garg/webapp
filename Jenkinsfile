@@ -8,14 +8,14 @@ pipeline {
                 bat 'mvn -B -DskipTests clean package'
             }
         }
-  //         stage('Sonar-Report') {
-  //           steps {
-  //           bat 'mvn sonar:sonar \
-  // -Dsonar.projectKey=jenkins_project \
-  // -Dsonar.host.url=http://169.254.36.199:9000 \
-  // -Dsonar.login=71fde489507d4bb4b48c9cc46b56899e'
-  //           }
-  //       }
+          stage('Sonar-Report') {
+            steps {
+            bat 'mvn sonar:sonar \
+  -Dsonar.projectKey=jenkins_project \
+  -Dsonar.host.url=http://localhost:9009 \
+  -Dsonar.login=squ_e16631c55d56e72378e1841bf14f3676e5b226dc
+            }
+        }
         stage('Test') { 
             steps {
                 bat 'mvn test' 
@@ -26,11 +26,11 @@ pipeline {
                 }
             }
         }
-         stage('Sonar-Report') {  
-            steps { 
-                 bat 'mvn clean install sonar:sonar -Dsonar.host.url=http://localhost:9009 -Dsonar.analysis.mode=publish'  
-             }
-      }
+      //    stage('Sonar-Report') {  
+      //       steps { 
+      //            bat 'mvn clean install sonar:sonar -Dsonar.host.url=http://localhost:9009 -Dsonar.analysis.mode=publish'  
+      //        }
+      // }
         // stage('Deploy'){
         //     steps{
         //         bat '/var/deployment/./deployment.sh'
