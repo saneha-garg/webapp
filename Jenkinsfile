@@ -27,13 +27,13 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
-      steps {
-        // bat 'java -jar "C:\\Program Files\\Jenkins\\workspace\\webapplication\\target\\java-webapp-1.0.jar" '
-       bat ' mvn clean package'
-       bat ' java -jar target/java-webapp-1.0.jar '
-      }
-    }
+    // stage('Deploy') {
+    //   steps {
+    //     // bat 'java -jar "C:\\Program Files\\Jenkins\\workspace\\webapplication\\target\\java-webapp-1.0.jar" '
+    //    bat ' mvn clean package'
+    //    bat ' java -jar target/java-webapp-1.0.jar '
+    //   }
+    // }
 
   }
 }
