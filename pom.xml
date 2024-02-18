@@ -78,17 +78,6 @@
             <url>http://localhost:8081/nexus/content/repositories/upes/</url> 
        </repository> 
       </distributionManagement>
- 
-Edit .m2/settings.xml and add nexus server credentials 
-   <settings> 
-   <servers> 
-   <server> 
-      <id>upes</id> 
-      <username>admin</username> 
-      <password>shiaa1234</password> 
-   </server> 
-   </servers> 
-   </settings> 
   <build>
     <plugins>
       <plugin>
