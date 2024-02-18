@@ -43,6 +43,8 @@ pipeline {
              type: 'jar']
         ]
      )
+      }
+    }
 
     // stage('Deploy') {
     //   steps {
